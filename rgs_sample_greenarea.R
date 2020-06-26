@@ -52,8 +52,8 @@ source("rgs_utils.R")
 execIndicatorGreenArea <- function(){
   
   # the follow two lines are for testing
-  greenarea_wfsurl = "https://ds2.digitwin.com.au:8443/geoserver/livedata/wfs?request=GetFeature&version=1.0.0&typeName=livedata:greenspace_psma2019_sa4_melbourne_inner&outputFormat=json"
-  pop_wfsurl = "https://ds2.digitwin.com.au:8443/geoserver/livedata/wfs?request=GetFeature&version=1.0.0&typeName=livedata:population_abs2016_sa1_melbourne_inner&outputFormat=json"
+  greenarea_wfsurl = "https://ds2.digitwin.com.au:8443/geoserver/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=livedata:greenspace_psma2019_sa4_melbourne_inner&outputFormat=json"
+  pop_wfsurl = "https://ds2.digitwin.com.au:8443/geoserver/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=livedata:population_abs2016_sa1_melbourne_inner&outputFormat=json"
   
   # load spatial object direct from geojson
   sp_greenarea = utils.loadGeoJSON2SP(greenarea_wfsurl)

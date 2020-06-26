@@ -82,19 +82,26 @@ library(httr)
 # this variable contains all credentials for accessing a geoserver instance to publish data layers and create styles
 globalGSCredentials = list()
 
-globalGSCredentials["gsRESTURL"] =  "http://IP_ADDRESS:PORT/geoserver" #change it to your own geoserver url
-globalGSCredentials["gsRESTUSER"] = "YOUR-GS-USERNAME" #change it to your own geoserver username (admin role required) 
-globalGSCredentials["gsRESTPW"] =  "YOUR-GS-PASSWORD" #change it to your own password 
-
-globalGSCredentials["gsWORKSPACENAME"] = "ws_studentid" #change it to your own unique workspace name, a new workspace will be automatically created if it does not exist, a valid name starts with a letter  
-globalGSCredentials["gsDATASTORESNAME"] = "ds_studentid" #change it to your own unique datastore name, a new datastore will be automatically created if it does not exist, a valid name starts with a letter
+#change it to your own geoserver url
+globalGSCredentials["gsRESTURL"] =  "http://YOUR-SERVER-IP-ADDRESS/geoserver" 
+#change it to your own geoserver username (admin role required) 
+globalGSCredentials["gsRESTUSER"] = "YOUR-GEOSERVER-ADMIN-USERNAME" 
+#change it to your own password 
+globalGSCredentials["gsRESTPW"] =  "YOUR-GEOSERVER-ADMIN-PASSWORD" 
+#change it to your own unique workspace name, a new workspace will be automatically created if it does not exist, a valid name starts with a letter 
+globalGSCredentials["gsWORKSPACENAME"] = "ws_studentid"
+#change it to your own unique datastore name, a new datastore will be automatically created if it does not exist, a valid name starts with a letter
+globalGSCredentials["gsDATASTORESNAME"] = "ds_studentid"
+#DON'T MODIFY THIS LINE
 globalGSCredentials["tempDirPath"] = sprintf("%s/%s",getwd(),"tempdata")
-globalGSCredentials["wfsUrlTemplate"] = "%s/wfs?service=wfs&version=1.0.0&request=GetFeature&typeName=%s:%s&outputFormat=json" #DON'T MODIFY THIS LINE
-
-WMSStyleCreateUrl = "https://master.digitwin.com.au/services/styling/sld/create" #DON'T MODIFY THIS LINE
-
-proj4string_epsg4326 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" #DON'T MODIFY THIS LINE
-proj4string_utm_template = "+proj=utm +zone=%i %s+ellps=WGS84 +datum=WGS84 +units=m +no_defs" #DON'T MODIFY THIS LINE
+#DON'T MODIFY THIS LINE
+globalGSCredentials["wfsUrlTemplate"] = "%s/wfs?service=wfs&version=1.0.0&request=GetFeature&typeName=%s:%s&outputFormat=json" 
+#DON'T MODIFY THIS LINE
+WMSStyleCreateUrl = "https://master.digitwin.com.au/services/styling/sld/create" 
+#DON'T MODIFY THIS LINE
+proj4string_epsg4326 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" 
+#DON'T MODIFY THIS LINE
+proj4string_utm_template = "+proj=utm +zone=%i %s+ellps=WGS84 +datum=WGS84 +units=m +no_defs" 
 
 #' debug print
 #'
