@@ -17,6 +17,9 @@
 # Written by: Dr. Yiqun Chen    yiqun.c@unimelb.edu.au
 # 
 # DevLogs:
+
+# v1.4 2020-06-09
+# (1) R v4.1.0 tested
 #
 # v1.3 2020-06-24
 # (1) update greenarea and population sample data url

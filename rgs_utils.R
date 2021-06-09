@@ -17,6 +17,12 @@
 # Written by: Dr. Yiqun Chen    yiqun.c@unimelb.edu.au
 # DevLogs:
 
+
+# v3.2 2021-06-09
+# (1) new implementatio of style creation, using digitwin sld creating service. 
+# (2) support geotiff layer publishing 
+# (3) R v4.1.0 tested
+
 # v3.1 2020-06-24
 # (1) new implementatio of style creation, using digitwin sld creating service. 
 # (2) support geotiff layer publishing 
@@ -83,7 +89,7 @@ library(httr)
 globalGSCredentials = list()
 
 #change it to your own geoserver url
-globalGSCredentials["gsRESTURL"] =  "http://YOUR-SERVER-IP-ADDRESS/geoserver" 
+globalGSCredentials["gsRESTURL"] =  "https://YOUR-SERVER-IP-ADDRESS/geoserver" 
 #change it to your own geoserver username (admin role required) 
 globalGSCredentials["gsRESTUSER"] = "YOUR-GEOSERVER-ADMIN-USERNAME" 
 #change it to your own password 
@@ -97,7 +103,7 @@ globalGSCredentials["tempDirPath"] = sprintf("%s/%s",getwd(),"tempdata")
 #DON'T MODIFY THIS LINE
 globalGSCredentials["wfsUrlTemplate"] = "%s/wfs?service=wfs&version=1.0.0&request=GetFeature&typeName=%s:%s&outputFormat=json" 
 #DON'T MODIFY THIS LINE
-WMSStyleCreateUrl = "https://master.digitwin.com.au/services/styling/sld/create" 
+WMSStyleCreateUrl = "https://digitwin.com.au/services/styling/sld/create" 
 #DON'T MODIFY THIS LINE
 proj4string_epsg4326 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" 
 #DON'T MODIFY THIS LINE
